@@ -57,7 +57,9 @@ var CountDown = React.createClass({
     } else {
       this.setState({disabled: true});
       this._countdown();
-      this.props.onPress();
+      if(this.props.onPress){
+          this.props.onPress();
+      }
     }
   },
 
