@@ -8,7 +8,7 @@ Run `npm install react-native-countdown --save`
 
 ```javascript
 // Within your render function. Count down after press it.
-<CoolDown onPress={this.sendAgain} />
+<CountDown onPress={this.sendAgain} />
 ```
 ## TODOS
 
