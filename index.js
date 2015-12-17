@@ -21,29 +21,30 @@ var CountDown = React.createClass({
     };
   },
   componentDidMount(){
-    this._cooldown();
+    this._countdown();
   },
   render(){
     var style = [styles.text];
     var component;
     if (this.state.disabled) {
       style.push({color: 'gray'});
+      style.push(this.props.disabledTextStyle);
       component =
           <View
-              style={styles.wrapper}
+              style={[styles.wrapper,this.props.buttonStyle]}
               >
             <TouchableWithoutFeedback
                 >
-              <Text style={style}>再发一次({this.state.time})</Text>
+              <Text style={[style]}>{this.props.text}({this.state.time})</Text>
             </TouchableWithoutFeedback>
           </View>
     } else {
       component =
           <TouchableHighlight
-              style={styles.wrapper}
+              style={[styles.wrapper,this.props.buttonStyle]}
               onPress={this._onPress.bind(this)}
               >
-            <Text style={style}>再发一次({this.state.time})</Text>
+            <Text style={[style,this.props.textStyle]}>{this.props.text}({this.state.time})</Text>
           </TouchableHighlight>
     }
     return (
@@ -55,12 +56,12 @@ var CountDown = React.createClass({
       //nothing
     } else {
       this.setState({disabled: true});
-      this._cooldown();
+      this._countdown();
       this.props.onPress();
     }
   },
 
-  _cooldown(){
+  _countdown(){
     var timer = function () {
       var time = this.state.time - 1;
       this.setState({time: time});
