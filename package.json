@@ -1,0 +1,23 @@
+{
+  "name": "react-native-countdown",
+  "version": "0.0.1",
+  "description": "react native countdown button",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buhe/react-native-countdown.git"
+  },
+  "keywords": [
+    "react-native",
+    "component"
+  ],
+  "author": "harebu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buhe/react-native-countdown/issues"
+  },
+  "homepage": "https://github.com/buhe/react-native-countdown#readme"
+}
