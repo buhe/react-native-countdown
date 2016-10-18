@@ -1,7 +1,8 @@
 /**
  * Created by guguyanhua on 12/11/15.
  */
-import React, {
+import React from 'react';
+import {
     Image,
     Text,
     View,
