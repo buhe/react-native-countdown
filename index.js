@@ -1,7 +1,8 @@
 /**
  * Created by guguyanhua on 12/11/15.
+ * Edited by Danny Yao on Monday 7th 2016
  */
-import React from 'react';
+import React from "react"
 import {
     Image,
     Text,
@@ -34,10 +35,10 @@ var CountDown = React.createClass({
           <View
               style={[styles.wrapper,this.props.buttonStyle]}
               >
-            <TouchableWithoutFeedback
+            <View
                 >
-              <Text style={[style]}>{this.props.text}({this.state.time})</Text>
-            </TouchableWithoutFeedback>
+              <Text style={[style]}>{this.props.text} {Math.floor(this.state.time/60)} Minutes and {this.state.time%60} Seconds...</Text>
+            </View>
           </View>
     } else {
       component =
@@ -45,7 +46,7 @@ var CountDown = React.createClass({
               style={[styles.wrapper,this.props.buttonStyle]}
               onPress={this._onPress.bind(this)}
               >
-            <Text style={[style,this.props.textStyle]}>{this.props.text}({this.state.time})</Text>
+            <Text style={[style,this.props.textStyle]}>{this.props.text} {Math.floor(this.state.time/60)} Minutes and {this.state.time%60} Seconds...</Text>
           </TouchableHighlight>
     }
     return (
